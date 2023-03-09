@@ -72,7 +72,6 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG,
                         format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                         datefmt='%m-%d %H:%M')
-    logging.getLogger().setLevel(logging.INFO)
     logging.info("Starting URL scrapping...")
     URL = 'https://en.wikipedia.org/'
     scrapper = WebScrapperTool(URL)
