@@ -13,5 +13,3 @@ RUN chown -R www-data:www-data /app
 STOPSIGNAL SIGTERM
 
 ENTRYPOINT ["sh", "./start.sh"]
-
-#CMD [ "./start.sh" ]
