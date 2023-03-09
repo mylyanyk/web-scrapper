@@ -69,11 +69,14 @@ class WebScrapperTool:
 
 
 if __name__ == '__main__':
-    logger = logging.getLogger()
-    logger.warning("Starting URL scrapping...")
+    logging.basicConfig(level=logging.DEBUG,
+                        format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                        datefmt='%m-%d %H:%M')
+    logging.getLogger().setLevel(logging.INFO)
+    logging.info("Starting URL scrapping...")
     URL = 'https://en.wikipedia.org/'
     scrapper = WebScrapperTool(URL)
-    logger.info("Writing content to CSV and SQL files...")
+    logging.info("Writing content to CSV and SQL files...")
     scrapper.write_to_db()
     scrapper.write_to_csv()
     # added sleep, so container doesn't exit after execution, and you could explore container files
